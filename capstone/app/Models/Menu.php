@@ -20,7 +20,7 @@ class Menu extends Model
      */
     protected $fillable = [
         
-        'manu_id', 
+        'menu_id', 
         'product_image',                                            
         'product_name',                                               
         'product_image',                                                   

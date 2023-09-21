@@ -28,4 +28,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/menu', function () {
+    return view('layouts.admin.menu');
+})->middleware(['auth', 'verified'])->name('menu');
+
+
+
 require __DIR__.'/auth.php';
+
