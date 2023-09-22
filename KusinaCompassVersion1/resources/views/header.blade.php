@@ -10,7 +10,9 @@
 <header> @yield('header')
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
+            <a href="{{ route('Home') }}">
             <img class="img-fluid" src="{{ asset('/Images/Logo.png') }}" alt="Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,10 +31,10 @@
                     <a class="nav-link" href="{{ url('ContactUs') }}">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{ url('StoreLogin') }}">Store Login</a>
+                    <a class="nav-link" href="{{ url('dashboard') }}">Store Login</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{ url('StoreLogin') }}">Signup</a>
+                    <a class="nav-link" href="{{ url('register') }}">Signup</a>
                     </li>
                     
                         </ul>
