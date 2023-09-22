@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp\htdocs\capsFinal\KusinaCompass\resources\views/contactUs.blade.php ENDPATH**/ ?>
