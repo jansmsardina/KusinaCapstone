@@ -5,9 +5,9 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    {{-- <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
+                    </a> --}}
                 </div>
 
                 <!-- Navigation Links -->
@@ -15,12 +15,24 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('store.edit')" :active="request()->routeIs('store.edit')">
+                        {{ __('Store') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
+                        {{ __('Menu') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
+                        {{ __('Profile') }}
+                    </x-nav-link>
                 </div>
-            </div>
+        
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
+                <x-dropdown text-align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
@@ -34,9 +46,6 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
