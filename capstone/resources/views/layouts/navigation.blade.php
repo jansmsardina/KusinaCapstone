@@ -16,6 +16,10 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('store.edit')" :active="request()->routeIs('store.edit')">
+                        {{ __('Store') }}
+                    </x-nav-link>
+
                     <x-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
                         {{ __('Menu') }}
                     </x-nav-link>

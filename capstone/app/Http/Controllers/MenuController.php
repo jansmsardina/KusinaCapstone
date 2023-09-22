@@ -52,7 +52,7 @@ class MenuController extends Controller
                 $Menu = new Menu;
                 $Menu->created_by = Auth::user()->id;
                 $Menu->product_name = $request->product_name;
-                $Menu->category = $request->category;
+                $Menu->price = $request->price;
                 $Menu->save();
     
 
@@ -62,7 +62,7 @@ class MenuController extends Controller
                 $Menu = Menu::find($request->product_id);
                 $Menu->updated_by = Auth::user()->id;
                 $Menu->product_name = $request->product_name;
-                $Menu->category = $request->category;
+                $Menu->price = $request->price;
                 $Menu->save();
     
             }

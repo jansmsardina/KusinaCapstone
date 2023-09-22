@@ -28,6 +28,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/store', [ProfileController::class, 'edit'])->name('store.edit');
+    Route::patch('/store', [ProfileController::class, 'update'])->name('store.update');
+    Route::delete('/store', [ProfileController::class, 'destroy'])->name('store.destroy');
+});  
 Route::get('/menu', function () {
     return view('layouts.admin.menu');
 })->middleware(['auth', 'verified'])->name('menu');
