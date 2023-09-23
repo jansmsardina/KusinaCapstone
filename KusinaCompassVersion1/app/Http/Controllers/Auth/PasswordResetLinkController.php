@@ -25,6 +25,9 @@ class PasswordResetLinkController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $input_type = filter_var($request->input('input_type'), FILTER_VALIDATE_EMAIL) ? 'email' : null;
+        $request->merge([$input_type => $request ->input(key:'input_type')]);
+       
         $request->validate([
             'email' => ['required', 'email'],
         ]);
