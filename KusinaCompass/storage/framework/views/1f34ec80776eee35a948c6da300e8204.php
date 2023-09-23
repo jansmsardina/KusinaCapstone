@@ -1,1 +1,0 @@
-<?php /**PATH C:\xampp\htdocs\capsFinal\KusinaCompass\resources\views/StoreLogin.blade.php ENDPATH**/ ?>
