@@ -3,8 +3,8 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Products') }}
         </h2>
-    </x-slot>
-
+   </x-slot> 
+{{-- 
     <div class="content-wrapper">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -42,9 +42,20 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+    
+    <div class="py-12">
+        {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6"> --}}
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <div class="max-w-xl">
+                    @include('product.create')
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script>
+    
+    {{-- <script>
         function editProduct(id){
             window.location.href = "<?php echo env('APP_URL'); ?>/KusinaCapstone/KusinaCompassVersion1//products/edit/" + id;
         }
@@ -62,5 +73,5 @@
         function addProduct(){
             window.location.href = "<?php echo env('APP_URL'); ?>/KusinaCapstone/KusinaCompassVersion1/products/create";
         }
-    </script>
+    </script> --}}
 </x-app-layout>
