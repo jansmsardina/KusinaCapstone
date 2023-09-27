@@ -13,6 +13,7 @@ class ProductController extends Controller
     }
 
     public function create (){
+
         return view('product.create')->with('success','Product Creates] Succesfully');
     }
     public function store(Request $request)
@@ -26,7 +27,8 @@ class ProductController extends Controller
     
     if ($request->hasFile('image')) 
     {
-        $destination_path = 'public/Uploads/ProductUploads';
+        $destination_path = '<public>
+        <Storage>Uploads/ProductUploads';
         $image = $request->file('image');
         $image_name = $image->getClientOriginalName();
         $path = $request->file('image')->storeAs($destination_path, $image_name); // Fix this line.
