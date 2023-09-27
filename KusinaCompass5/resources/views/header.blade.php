@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <header> @yield('header')
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
+        <div class="container-fluid" style="background-color: rgba(63, 160, 198, 0.163)">
             <a href="{{ route('Home') }}">
             <img class="img-fluid" src="{{ asset('/Images/Logo.png') }}" alt="Logo">
             </a>
@@ -17,7 +17,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="background-color: rgba(63, 160, 198, 0.004)">
                     <li class="nav-item">
                     <a class="nav-link" href="{{ url('Home') }}">Home</a>
                     </li>
