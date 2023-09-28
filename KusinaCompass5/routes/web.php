@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,21 +29,29 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+//Profile routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/stores/edit', [ProfileController::class, 'edit'])->name('stores.edit');
-    Route::patch('/stores', [ProfileController::class, 'update'])->name('stores.update');
-    Route::delete('/stores', [ProfileController::class, 'destroy'])->name('stores.destroy');
-    
+    //Store routes
+    Route::prefix('store')->group(function () {
+        Route::get('/', [StoreController::class, 'index'])->name('store.show');
+        Route::get('/edit', [StoreController::class, 'edit'])->name('store.edit');
+        Route::put('/update', [StoreController::class, 'update'])->name('store.update');
+    });
+
+    //Product routes
     Route::post('/products', [ProductController::class, 'store'])->name('products.store');
     Route::get('/product', [ProductController::class, 'index'])->name('product.index');
     Route::get('/products', [ProductController::class, 'store'])->name('product.store');
     Route::get('/products/create', [ProductController::class, 'create'])->name('product.create');
     Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
     Route::get('/products/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+
+
 
 
     Route::put('/products/{product}/update', [App\Http\Controllers\ProductController::class, 'update'])->name('products.update');

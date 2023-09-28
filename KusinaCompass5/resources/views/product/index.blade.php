@@ -2,13 +2,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container mt-4">
-        <h1 class="text-center">Menu</h1>
-
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Menu') }}
+            </h2>
+        </x-slot>
         @if(session('success'))    
         <div class="alert alert-success">
             {{ session('success') }}
@@ -26,8 +29,8 @@
                     <th>Price</th>
                     <th>Description</th>
                     <th>Image</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
                             <tbody>
